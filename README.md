@@ -63,7 +63,7 @@ Adversaries run in a realistic attack sequence so the telemetry in Splunk reflec
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/caldera-splunk-orchestrator.git
+git clone https://github.com/renatomag/caldera-splunk-orchestrator.git
 cd caldera-splunk-orchestrator
 python3 -m venv venv
 venv/bin/pip install -r requirements.txt

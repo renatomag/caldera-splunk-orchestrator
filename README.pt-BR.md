@@ -63,7 +63,7 @@ Os adversários são executados em uma sequência realista de ataque, de modo qu
 ## Instalação
 
 ```bash
-git clone https://github.com/<seu-usuario>/caldera-splunk-orchestrator.git
+git clone https://github.com/renatomag/caldera-splunk-orchestrator.git
 cd caldera-splunk-orchestrator
 python3 -m venv venv
 venv/bin/pip install -r requirements.txt
