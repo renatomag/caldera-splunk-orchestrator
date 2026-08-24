@@ -63,7 +63,8 @@ Os adversários são executados em uma sequência realista de ataque, de modo qu
 ## Instalação
 
 ```bash
-cd /home/splunkadmin/caldera-splunk-orchestrator
+git clone https://github.com/<seu-usuario>/caldera-splunk-orchestrator.git
+cd caldera-splunk-orchestrator
 python3 -m venv venv
 venv/bin/pip install -r requirements.txt
 
@@ -72,6 +73,8 @@ cp config/settings.yaml.example config/settings.yaml
 ```
 
 Edite `config/settings.yaml` e substitua cada `<placeholder>` pelos valores do seu ambiente antes de executar.
+
+> **Nota para usuários de systemd:** o `WorkingDirectory` no arquivo de serviço deve corresponder ao diretório onde você clonou o repositório. Atualize-o com o caminho correto antes de habilitar o serviço.
 
 ---
 

@@ -63,7 +63,8 @@ Adversaries run in a realistic attack sequence so the telemetry in Splunk reflec
 ## Installation
 
 ```bash
-cd /home/splunkadmin/caldera-splunk-orchestrator
+git clone https://github.com/<your-username>/caldera-splunk-orchestrator.git
+cd caldera-splunk-orchestrator
 python3 -m venv venv
 venv/bin/pip install -r requirements.txt
 
@@ -72,6 +73,8 @@ cp config/settings.yaml.example config/settings.yaml
 ```
 
 Edit `config/settings.yaml` and replace every `<placeholder>` with the values for your environment before running.
+
+> **Note for systemd users:** the unit file's `WorkingDirectory` must match wherever you cloned the repo. Update it to your actual path before enabling the service.
 
 ---
 
