@@ -1,0 +1,13 @@
+caldera_adversary_id: 51df42bd-1416-417e-9c0a-309c4948ad01
+description: T1059.003 | execution | ESCU - Detect Prohibited Applications Spawning
+  cmd exe - Rule
+display_name: SPLUNK ES / Detect Prohibited Applications Spawning cmd exe / Simulate
+  BlackByte Ransomware Print Bombing
+name: escu_015
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 942d94dff3cc494bacf5517e775321a7
+  id: T1059.003
+  name: Simulate BlackByte Ransomware Print Bombing
+  target_role: workstation

@@ -1,0 +1,92 @@
+caldera:
+  host: localhost
+  port: 8888
+  api_key: "${CALDERA_API_KEY}"       # export CALDERA_API_KEY=... before running
+
+vmware:
+  host: <vcenter-hostname>
+  username: "${GOVC_USERNAME}"
+  password: "${GOVC_PASSWORD}"
+  vm_name: <vm-name>
+  snapshot_name: "<snapshot-name>"
+  datacenter: <datacenter-name>
+  verify_ssl: false
+  agent_ready_timeout_minutes: 10     # how long to wait for Sandcat to beacon after revert
+
+agents:                               # pre-deployed Sandcat beacons — must be alive before op starts
+  - name: <agent-name>
+    fqdn: <agent-name>.<domain>
+    role: workstation
+
+targets:                              # lateral movement destinations — Sandcat deployed dynamically during op
+  - name: <dc-name>
+    fqdn: <dc-name>.<domain>
+    role: domain_controller
+
+schedule:
+  mode: interval                      # "interval" | "cron" | "manual"
+  interval_hours: 2
+  cron_expression: "0 * * * *"        # only used when mode=cron
+  operation_timeout_minutes: 30       # stop waiting for CALDERA op after this many minutes
+
+reporting:
+  mode: log_only                      # "webhook" | "email" | "both" | "log_only"
+  webhook_url: ""
+  email_to: ""
+  min_coverage_threshold: 80
+
+active_adversaries:
+  # Discovery
+  - escu_045  # nltest Discover DC
+  - escu_046  # nltest Remote System Discovery
+  - escu_047  # SharpHound LocalAdmin
+  # Command & Control
+  - escu_009  # BITSAdmin download
+  - escu_001  # AnyDesk (file)
+  - escu_002  # GoToAssist (file)
+  - escu_003  # LogMeIn (file)
+  - escu_004  # TeamViewer (file)
+  - escu_005  # AnyDesk (process)
+  - escu_006  # GoToAssist (process)
+  - escu_007  # LogMeIn (process)
+  - escu_008  # GoToAssist (registry)
+  # Execution
+  - escu_010  # CMD read from file
+  - escu_011  # CMD write then execute
+  - escu_013  # CMD writes text to file
+  - escu_012  # BlackByte print bombing (CMD)
+  - escu_015  # BlackByte prohibited apps spawning cmd
+  - escu_014  # Mimikatz Cradlecraft PS obfuscation
+  # Privilege Escalation
+  - escu_016  # UAC bypass registry
+  # Defense Evasion
+  - escu_020  # Disable Defender All
+  - escu_021  # Tamper Defender ATP PS
+  - escu_022  # Tamper Defender ATP Aliases
+  - escu_030  # Defender Exclusion Extension
+  - escu_031  # Defender Exclusion Folder
+  - escu_032  # Defender Exclusion Process
+  - escu_033  # Defender Registry PS
+  - escu_023  # Hide Files Registry
+  - escu_017  # CertUtil Rename and Decode
+  - escu_018  # Deobfuscate/Decode
+  - escu_024  # Install root CA
+  - escu_019  # CHM Remote Payload
+  - escu_025  # MSHTA VBScript
+  - escu_026  # MSHTA PowerShell
+  - escu_027  # Regsvr32 COM
+  - escu_028  # Remove Admin Shares
+  - escu_029  # Remove Network Share
+  # Credential Access
+  - escu_036  # Create VSS PS (TD SYNNEX)
+  - escu_037  # Create VSS WMI (TD SYNNEX)
+  - escu_038  # Create VSS PS (regular)
+  - escu_039  # Create VSS WMI (regular)
+  - escu_040  # Create VSS WMI (shadow copy detection)
+  - escu_041  # Create VSS vssadmin
+  - escu_035  # Create VSS remotely WMI esentutl
+  - escu_034  # Copy NTDS.dit from VSS
+  - escu_042  # LSASS createdump
+  # Impact
+  - escu_043  # Delete Volume Shadow Copies
+  - escu_044  # BCDEdit Disable Recovery

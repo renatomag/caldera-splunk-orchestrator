@@ -1,0 +1,13 @@
+caldera_adversary_id: 457798c3-7308-43e7-a551-be1ee700a835
+description: T1018 | discovery | ESCU - Domain Controller Discovery with Nltest -
+  Rule
+display_name: SPLUNK ES / Domain Controller Discovery with Nltest / Remote System
+  Discovery - nltest
+name: escu_046
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: fcb5b04ee56a74c73f29b9eecb6d4b17
+  id: T1018
+  name: Remote System Discovery - nltest
+  target_role: workstation

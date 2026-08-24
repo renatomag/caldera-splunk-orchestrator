@@ -1,0 +1,29 @@
+namespace: discovery
+
+detections:
+  nltest_dc_discovery:
+    display_name: "Domain Controller Discovery via nltest"
+    mitre_technique: T1018
+    splunk_index: notable
+    search_name_pattern: "ESCU - Domain Controller Discovery with Nltest - Rule"
+    correlation_search_name: "ESCU - Domain Controller Discovery with Nltest - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*nltest*" OR CommandLine="*nltest*")
+      (CommandLine="*/dclist*" OR CommandLine="*/dsgetdc*")
+      | stats count
+    severity: medium
+    required: true
+
+  sharphound_localadmin:
+    display_name: "SharpHound AD Enumeration - Local Admin Groups"
+    mitre_technique: T1069.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect SharpHound Command-Line Arguments - Rule"
+    correlation_search_name: "ESCU - Detect SharpHound Command-Line Arguments - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      CommandLine="*--CollectionMethods*LocalAdmin*"
+      | stats count
+    severity: high
+    required: true

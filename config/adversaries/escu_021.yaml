@@ -1,0 +1,13 @@
+caldera_adversary_id: 6545d1d2-8e3e-4fe4-a30a-8d1355f2b1d9
+description: T1562.001 | defense-evasion | ESCU - Disable Windows Behavior Monitoring
+  - Rule
+display_name: SPLUNK ES / Disable Windows Behavior Monitoring / Tamper with Windows
+  Defender ATP PowerShell
+name: escu_021
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: f0fde90a3d59061b226197974e7dcbaa
+  id: T1562.001
+  name: Tamper with Windows Defender ATP PowerShell
+  target_role: workstation

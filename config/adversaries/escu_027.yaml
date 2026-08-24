@@ -1,0 +1,13 @@
+caldera_adversary_id: 939fb454-f019-42ee-87b2-216b7c83a289
+description: T1218.010 | defense-evasion | ESCU - Detect Regsvr32 Application Control
+  Bypass - Rule
+display_name: SPLUNK ES / Detect Regsvr32 Application Control Bypass / Regsvr32 local
+  COM scriptlet execution
+name: escu_027
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 56808524066e0c8753081b83a18df201
+  id: T1218.010
+  name: Regsvr32 local COM scriptlet execution
+  target_role: workstation

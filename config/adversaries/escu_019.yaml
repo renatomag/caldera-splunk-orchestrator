@@ -1,0 +1,13 @@
+caldera_adversary_id: c960493a-987e-4519-a211-e6560cdd2233
+description: T1218.001 | defense-evasion | ESCU - Detect HTML Help URL in Command
+  Line - Rule
+display_name: SPLUNK ES / Detect HTML Help URL in Command Line / Compiled HTML Help
+  Remote Payload
+name: escu_019
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 6d5da876fe45a933257a96c14c3132f0
+  id: T1218.001
+  name: Compiled HTML Help Remote Payload
+  target_role: workstation

@@ -1,0 +1,13 @@
+caldera_adversary_id: e863da10-7826-4911-8b1e-94c54524443e
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+display_name: SPLUNK ES / CMD Carry Out String Command Parameter / Command Prompt
+  read contents from CMD file and execute
+name: escu_010
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 5c3b5a0a1fe7b7ece6846e4fa894b5ad
+  id: T1059.003
+  name: Command Prompt read contents from CMD file and execute
+  target_role: workstation

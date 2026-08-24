@@ -1,0 +1,12 @@
+caldera_adversary_id: bab4d378-96aa-4ea7-8ae6-3295f9e349da
+description: T1490 | impact | ESCU - Deleting Shadow Copies - Rule
+display_name: SPLUNK ES / Deleting Shadow Copies / Windows - Delete Volume Shadow
+  Copies
+name: escu_043
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 153905affadb36241ced3d3b12ba0481
+  id: T1490
+  name: Windows - Delete Volume Shadow Copies
+  target_role: workstation

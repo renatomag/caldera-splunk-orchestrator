@@ -1,0 +1,13 @@
+caldera_adversary_id: 73bfc37a-9de2-4994-88c9-0a41c88af35b
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  File - Rule
+display_name: SPLUNK ES / Detect Remote Access Software Usage File / AnyDesk Files
+  Detected Test on Windows
+name: escu_001
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: aada5380e7d0a4c7b71f2a324d9d5327
+  id: T1219
+  name: AnyDesk Files Detected Test on Windows
+  target_role: workstation

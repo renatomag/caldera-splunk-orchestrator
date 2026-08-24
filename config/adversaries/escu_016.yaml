@@ -1,0 +1,12 @@
+caldera_adversary_id: 9ecf4930-89d0-4d3d-a6ce-2524097959ee
+description: T1548.002 | privilege-escalation | ESCU - Disabling Remote User Account
+  Control - Rule
+display_name: SPLUNK ES / Disabling Remote User Account Control / UAC bypass registry
+name: escu_016
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 665432a4-42e7-4ee1-af19-a9a8c9455d0c
+  id: T1548.002
+  name: UAC bypass registry
+  target_role: workstation

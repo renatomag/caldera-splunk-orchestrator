@@ -1,0 +1,38 @@
+namespace: lateral_movement
+
+detections:
+  psexec:
+    display_name: "PsExec Lateral Movement"
+    mitre_technique: T1021.002
+    splunk_index: notable
+    search_name_pattern: "*PsExec*"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*psexec*" OR CommandLine="*\\admin$\\*")
+      | stats count
+    severity: high
+    required: true
+
+  smb_admin_share:
+    display_name: "SMB Admin Share Access"
+    mitre_technique: T1021.002
+    splunk_index: notable
+    search_name_pattern: "*Admin Share*"
+    fallback_spl: >
+      index=wineventlog EventCode=5145
+      ShareName="\\\\*\\ADMIN$"
+      | stats count
+    severity: medium
+    required: false
+
+  wmi_exec:
+    display_name: "WMI Remote Execution"
+    mitre_technique: T1047
+    splunk_index: notable
+    search_name_pattern: "*WMI*Remote*"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (CommandLine="*wmic*" OR Image="*WmiPrvSE*")
+      | stats count
+    severity: high
+    required: false

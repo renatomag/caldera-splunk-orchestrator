@@ -1,0 +1,30 @@
+namespace: command_and_control
+
+detections:
+  remote_access_file:
+    display_name: "Remote Access Software Files Detected (AnyDesk/GoToAssist/LogMeIn/TeamViewer)"
+    mitre_technique: T1219
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect Remote Access Software Usage File - Rule"
+    correlation_search_name: "ESCU - Detect Remote Access Software Usage File - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (CommandLine="*anydesk*" OR CommandLine="*teamviewer*"
+      OR CommandLine="*logmein*" OR CommandLine="*gotoassist*")
+      | stats count
+    severity: high
+    required: true
+
+  bits_download:
+    display_name: "BITSAdmin File Download (Ingress Tool Transfer)"
+    mitre_technique: T1105
+    splunk_index: notable
+    search_name_pattern: "ESCU - BITSAdmin Download File - Rule"
+    correlation_search_name: "ESCU - BITSAdmin Download File - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*bitsadmin*" OR CommandLine="*bitsadmin*")
+      CommandLine="*/transfer*"
+      | stats count
+    severity: medium
+    required: true

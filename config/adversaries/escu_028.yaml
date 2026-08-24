@@ -1,0 +1,13 @@
+caldera_adversary_id: 98eb8269-a401-48af-8d4b-0816594f62dc
+description: T1070.005 | defense-evasion | ESCU - Create or delete windows shares
+  using net exe - Rule
+display_name: SPLUNK ES / Create or delete windows shares using net exe / Remove Administrative
+  Shares
+name: escu_028
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 1b43591006b8e25b8df16ee52f0832bf
+  id: T1070.005
+  name: Remove Administrative Shares
+  target_role: workstation

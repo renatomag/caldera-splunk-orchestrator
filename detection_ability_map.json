@@ -1,0 +1,550 @@
+{
+  "_meta": {
+    "description": "ESCU detection \u2192 CALDERA ability mappings, keyed by detection name.",
+    "generated": "2026-05-13T21:59:53Z",
+    "schema": {
+      "detection_name": "Splunk saved-search name (string)",
+      "app": "Splunk app that owns the detection (string)",
+      "techniques": "MITRE technique IDs annotated on the detection (list of strings)",
+      "abilities": "CALDERA abilities whose technique_id is in 'techniques' (list of objects)",
+      "ability.ability_id": "CALDERA ability UUID",
+      "ability.name": "Human-readable ability name",
+      "ability.tactic": "MITRE tactic slug",
+      "ability.technique_id": "MITRE technique ID this ability exercises"
+    }
+  },
+  "mappings": [
+    {
+      "detection_name": "ESCU - Detect Remote Access Software Usage File - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1219"
+      ],
+      "abilities": [
+        {
+          "ability_id": "aada5380e7d0a4c7b71f2a324d9d5327",
+          "name": "AnyDesk Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        },
+        {
+          "ability_id": "b6ebae300e5ff115e965cc9179d4f831",
+          "name": "GoToAssist Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        },
+        {
+          "ability_id": "f1b3fca18d7465cd10e5a7477a3bf97d",
+          "name": "LogMeIn Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        },
+        {
+          "ability_id": "f50ec080343f1bec4e739dd20675c349",
+          "name": "TeamViewer Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect Remote Access Software Usage Process - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1219"
+      ],
+      "abilities": [
+        {
+          "ability_id": "aada5380e7d0a4c7b71f2a324d9d5327",
+          "name": "AnyDesk Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        },
+        {
+          "ability_id": "b6ebae300e5ff115e965cc9179d4f831",
+          "name": "GoToAssist Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        },
+        {
+          "ability_id": "f1b3fca18d7465cd10e5a7477a3bf97d",
+          "name": "LogMeIn Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect Remote Access Software Usage Registry - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1219"
+      ],
+      "abilities": [
+        {
+          "ability_id": "b6ebae300e5ff115e965cc9179d4f831",
+          "name": "GoToAssist Files Detected Test on Windows",
+          "tactic": "command-and-control",
+          "technique_id": "T1219"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - BITSAdmin Download File - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1105",
+        "T1197"
+      ],
+      "abilities": [
+        {
+          "ability_id": "68f09bfb5a5a28c11608d106eac63abd",
+          "name": "Windows - BITSAdmin BITS Download",
+          "tactic": "command-and-control",
+          "technique_id": "T1105"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - CMD Carry Out String Command Parameter - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1059.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "5c3b5a0a1fe7b7ece6846e4fa894b5ad",
+          "name": "Command Prompt read contents from CMD file and execute",
+          "tactic": "execution",
+          "technique_id": "T1059.003"
+        },
+        {
+          "ability_id": "9003977ffd2779fd5877d65f970af885",
+          "name": "Command prompt writing script to file then executes it",
+          "tactic": "execution",
+          "technique_id": "T1059.003"
+        },
+        {
+          "ability_id": "942d94dff3cc494bacf5517e775321a7",
+          "name": "Simulate BlackByte Ransomware Print Bombing",
+          "tactic": "execution",
+          "technique_id": "T1059.003"
+        },
+        {
+          "ability_id": "e0d7856bf28741789ecf1e0654d96995",
+          "name": "Writes text to a file and displays it.",
+          "tactic": "execution",
+          "technique_id": "T1059.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "Endpoint - ESCU - Malicious PowerShell Process With Obfuscation Techniques - Rule - TD SYNNEX - Rule",
+      "app": "SplunkEnterpriseSecuritySuite",
+      "techniques": [
+        "T1059.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "90c76bd616efee6d7c98dc6c1dcc6e99",
+          "name": "Mimikatz - Cradlecraft PsSendKeys",
+          "tactic": "execution",
+          "technique_id": "T1059.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect Prohibited Applications Spawning cmd exe - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1059.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "942d94dff3cc494bacf5517e775321a7",
+          "name": "Simulate BlackByte Ransomware Print Bombing",
+          "tactic": "execution",
+          "technique_id": "T1059.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Disabling Remote User Account Control - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1548.002"
+      ],
+      "abilities": [
+        {
+          "ability_id": "665432a4-42e7-4ee1-af19-a9a8c9455d0c",
+          "name": "UAC bypass registry",
+          "tactic": "privilege-escalation",
+          "technique_id": "T1548.002"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - CertUtil With Decode Argument - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1140"
+      ],
+      "abilities": [
+        {
+          "ability_id": "e510c5fd2f1ea418990fcf06775bc9b4",
+          "name": "Certutil Rename and Decode",
+          "tactic": "defense-evasion",
+          "technique_id": "T1140"
+        },
+        {
+          "ability_id": "26c0843592bd870dab849c9f682b09da",
+          "name": "Deobfuscate/Decode Files Or Information",
+          "tactic": "defense-evasion",
+          "technique_id": "T1140"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect HTML Help URL in Command Line - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1218.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "6d5da876fe45a933257a96c14c3132f0",
+          "name": "Compiled HTML Help Remote Payload",
+          "tactic": "defense-evasion",
+          "technique_id": "T1218.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Disable Windows Behavior Monitoring - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1562.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "b007f6e8-4a87-4440-8888-29ceab047d9b",
+          "name": "Disable Windows Defender All",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        },
+        {
+          "ability_id": "f0fde90a3d59061b226197974e7dcbaa",
+          "name": "Tamper with Windows Defender ATP PowerShell",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        },
+        {
+          "ability_id": "32047c4f30d4e65ebc9b22b9b8368bca",
+          "name": "Tamper with Windows Defender ATP using Aliases - PowerShell",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Disable Show Hidden Files - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1112",
+        "T1562.001",
+        "T1564.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "6ac8f48413127289ac42b76a0785b08f",
+          "name": "Hide Files Through Registry",
+          "tactic": "defense-evasion",
+          "technique_id": "T1564.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Attempt To Add Certificate To Untrusted Store - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1553.004"
+      ],
+      "abilities": [
+        {
+          "ability_id": "2cdcf1010a524231a26b5f3c6025eb91",
+          "name": "Install root CA on Windows with certutil",
+          "tactic": "defense-evasion",
+          "technique_id": "T1553.004"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect mshta inline hta execution - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1218.005"
+      ],
+      "abilities": [
+        {
+          "ability_id": "e5ca57d20f8608e2acc0808b8dd8726c",
+          "name": "Mshta executes VBScript to execute malicious command",
+          "tactic": "defense-evasion",
+          "technique_id": "T1218.005"
+        },
+        {
+          "ability_id": "54a7ac8fc8991511de9993983d3d3215",
+          "name": "Mshta used to Execute PowerShell",
+          "tactic": "defense-evasion",
+          "technique_id": "T1218.005"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect Regsvr32 Application Control Bypass - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1218.010"
+      ],
+      "abilities": [
+        {
+          "ability_id": "56808524066e0c8753081b83a18df201",
+          "name": "Regsvr32 local COM scriptlet execution",
+          "tactic": "defense-evasion",
+          "technique_id": "T1218.010"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Create or delete windows shares using net exe - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1070.005"
+      ],
+      "abilities": [
+        {
+          "ability_id": "1b43591006b8e25b8df16ee52f0832bf",
+          "name": "Remove Administrative Shares",
+          "tactic": "defense-evasion",
+          "technique_id": "T1070.005"
+        },
+        {
+          "ability_id": "d7c027c49b9819c836e9533c8d96eaaa",
+          "name": "Remove Network Share",
+          "tactic": "defense-evasion",
+          "technique_id": "T1070.005"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Add or Set Windows Defender Exclusion - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1562.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "e0946bc3b8b888d6c4cdf3f023fe3c0b",
+          "name": "Tamper with Windows Defender Evade Scanning -Extension",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        },
+        {
+          "ability_id": "5c4ea84c2b050f1f8b6f880755ccbc62",
+          "name": "Tamper with Windows Defender Evade Scanning -Folder",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        },
+        {
+          "ability_id": "c407315583b3a00d9a2e0c3c510f2c96",
+          "name": "Tamper with Windows Defender Evade Scanning -Process",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Disable Defender AntiVirus Registry - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1562.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "bfbaa9c720efc114513ddd5aab57a872",
+          "name": "Tamper with Windows Defender Registry - Powershell",
+          "tactic": "defense-evasion",
+          "technique_id": "T1562.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Credential Dumping via Copy Command from Shadow Copy - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1003.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "548f5aa3ec2fcfc6872ee10975480f29",
+          "name": "Copy NTDS.dit from Volume Shadow Copy",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        },
+        {
+          "ability_id": "053d6505f7c4cf792b0ab2f262dff95a",
+          "name": "Create Volume Shadow Copy remotely (WMI) with esentutl",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "Endpoint - ESCU - Creation of Shadow Copy with wmic and powershell - Rule - TD SYNNEX - Rule",
+      "app": "SplunkEnterpriseSecuritySuite",
+      "techniques": [
+        "T1003.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "6dc5c587fd22d65b81a443b7ce065ab1",
+          "name": "Create Volume Shadow Copy with Powershell",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        },
+        {
+          "ability_id": "cf60378dd1bbaccd4e7391c0317da202",
+          "name": "Create Volume Shadow Copy with WMI",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Creation of Shadow Copy with wmic and powershell - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1003.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "6dc5c587fd22d65b81a443b7ce065ab1",
+          "name": "Create Volume Shadow Copy with Powershell",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        },
+        {
+          "ability_id": "cf60378dd1bbaccd4e7391c0317da202",
+          "name": "Create Volume Shadow Copy with WMI",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Creation of Shadow Copy - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1003.003"
+      ],
+      "abilities": [
+        {
+          "ability_id": "cf60378dd1bbaccd4e7391c0317da202",
+          "name": "Create Volume Shadow Copy with WMI",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        },
+        {
+          "ability_id": "6b55240dbd6e02df957284328938fcf6",
+          "name": "Create Volume Shadow Copy with vssadmin",
+          "tactic": "credential-access",
+          "technique_id": "T1003.003"
+        }
+      ]
+    },
+    {
+      "detection_name": "Endpoint - ESCU - Windows Credential Dumping LSASS Memory Createdump - Rule - TD SYNNEX - Rule",
+      "app": "SplunkEnterpriseSecuritySuite",
+      "techniques": [
+        "T1003.001"
+      ],
+      "abilities": [
+        {
+          "ability_id": "8e01631039faf6a9a84df376bf9ad0f1",
+          "name": "Dump LSASS with createdump.exe from .Net v5",
+          "tactic": "credential-access",
+          "technique_id": "T1003.001"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Deleting Shadow Copies - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1490"
+      ],
+      "abilities": [
+        {
+          "ability_id": "153905affadb36241ced3d3b12ba0481",
+          "name": "Windows - Delete Volume Shadow Copies",
+          "tactic": "impact",
+          "technique_id": "T1490"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - BCDEdit Failure Recovery Modification - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1490"
+      ],
+      "abilities": [
+        {
+          "ability_id": "8467c994685ccf178db166964bd80fab",
+          "name": "Windows - Disable Windows Recovery Console Repair",
+          "tactic": "impact",
+          "technique_id": "T1490"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Domain Controller Discovery with Nltest - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1018"
+      ],
+      "abilities": [
+        {
+          "ability_id": "26c8b8b5-7b5b-4de1-a128-7d37fb14f517",
+          "name": "Discover domain controller",
+          "tactic": "discovery",
+          "technique_id": "T1018"
+        },
+        {
+          "ability_id": "fcb5b04ee56a74c73f29b9eecb6d4b17",
+          "name": "Remote System Discovery - nltest",
+          "tactic": "discovery",
+          "technique_id": "T1018"
+        }
+      ]
+    },
+    {
+      "detection_name": "ESCU - Detect SharpHound Command-Line Arguments - Rule",
+      "app": "DA-ESS-ContentUpdate",
+      "techniques": [
+        "T1069.001",
+        "T1069.002",
+        "T1087.001",
+        "T1087.002",
+        "T1482"
+      ],
+      "abilities": [
+        {
+          "ability_id": "608e19b5f7e210ba73e207289e5a1314",
+          "name": "SharpHound3 - LocalAdmin",
+          "tactic": "discovery",
+          "technique_id": "T1069.001"
+        }
+      ]
+    }
+  ]
+}

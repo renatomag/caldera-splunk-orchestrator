@@ -1,0 +1,11 @@
+caldera_adversary_id: cc911075-53e3-4f80-bac3-608d5e95418d
+description: T1105 | command-and-control | ESCU - BITSAdmin Download File - Rule
+display_name: SPLUNK ES / BITSAdmin Download File / Windows - BITSAdmin BITS Download
+name: escu_009
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 68f09bfb5a5a28c11608d106eac63abd
+  id: T1105
+  name: Windows - BITSAdmin BITS Download
+  target_role: workstation

@@ -1,0 +1,13 @@
+caldera_adversary_id: db1f0d5a-666d-47c8-81d2-25a8dae0995a
+description: T1562.001 | defense-evasion | ESCU - Add or Set Windows Defender Exclusion
+  - Rule
+display_name: SPLUNK ES / Add or Set Windows Defender Exclusion / Tamper with Windows
+  Defender Evade Scanning -Extension
+name: escu_030
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: e0946bc3b8b888d6c4cdf3f023fe3c0b
+  id: T1562.001
+  name: Tamper with Windows Defender Evade Scanning -Extension
+  target_role: workstation

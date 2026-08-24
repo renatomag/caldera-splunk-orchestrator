@@ -1,0 +1,13 @@
+caldera_adversary_id: 28bf9f5b-307b-4c76-aa08-548438e1e412
+description: T1562.001 | defense-evasion | ESCU - Disable Defender AntiVirus Registry
+  - Rule
+display_name: SPLUNK ES / Disable Defender AntiVirus Registry / Tamper with Windows
+  Defender Registry - Powershell
+name: escu_033
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: bfbaa9c720efc114513ddd5aab57a872
+  id: T1562.001
+  name: Tamper with Windows Defender Registry - Powershell
+  target_role: workstation

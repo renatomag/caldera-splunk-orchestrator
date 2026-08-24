@@ -1,0 +1,13 @@
+caldera_adversary_id: cbfb0792-fc36-4e3d-8ab2-5033d8b27435
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  Process - Rule
+display_name: SPLUNK ES / Detect Remote Access Software Usage Process / LogMeIn Files
+  Detected Test on Windows
+name: escu_007
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: f1b3fca18d7465cd10e5a7477a3bf97d
+  id: T1219
+  name: LogMeIn Files Detected Test on Windows
+  target_role: workstation

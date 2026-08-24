@@ -1,0 +1,18 @@
+# Runtime environment — contains real hostnames and VM names, never commit
+config/settings.yaml
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.python-version
+
+# Cycle state — machine-specific, regenerated at runtime
+data/prev_cycle_ops.json
+
+# govc binary — too large for git, install separately
+govc
+
+# Discovery script output
+/tmp/discovery_output.json

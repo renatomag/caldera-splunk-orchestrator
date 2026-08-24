@@ -1,0 +1,35 @@
+[Unit]
+Description=CALDERA + Splunk ES Automation Orchestrator
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=splunkadmin
+WorkingDirectory=/home/splunkadmin/caldera-splunk-orchestrator
+
+# Credentials file — create this manually, chmod 600, never commit it:
+#   sudo mkdir -p /etc/caldera-orchestrator
+#   sudo touch /etc/caldera-orchestrator/credentials
+#   sudo chmod 600 /etc/caldera-orchestrator/credentials
+#   sudo chown splunkadmin /etc/caldera-orchestrator/credentials
+# Then add two lines:  CALDERA_API_KEY=...   SPLUNK_TOKEN=...
+EnvironmentFile=/etc/caldera-orchestrator/credentials
+
+# Activate the venv by pointing directly at its Python interpreter
+ExecStart=/home/splunkadmin/caldera-splunk-orchestrator/venv/bin/python \
+    main.py \
+    --config-dir /home/splunkadmin/caldera-splunk-orchestrator/config \
+    --log-level INFO
+
+Restart=on-failure
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=caldera-orchestrator
+
+# Prevent the service from acquiring new privileges
+NoNewPrivileges=true
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,13 @@
+caldera_adversary_id: 7e38c2ab-f17a-4c82-9096-797f42f3a048
+description: T1069.001 | discovery | ESCU - Detect SharpHound Command-Line Arguments
+  - Rule
+display_name: SPLUNK ES / Detect SharpHound Command-Line Arguments / SharpHound3 -
+  LocalAdmin
+name: escu_047
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 608e19b5f7e210ba73e207289e5a1314
+  id: T1069.001
+  name: SharpHound3 - LocalAdmin
+  target_role: workstation

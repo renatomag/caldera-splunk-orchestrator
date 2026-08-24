@@ -1,0 +1,13 @@
+caldera_adversary_id: 5e99ff3a-c0b4-4d37-b748-caa5beea79fd
+description: T1059.001 | execution | Endpoint - ESCU - Malicious PowerShell Process
+  With Obfuscation Techniques - Rule - TD SYNNEX - Rule
+display_name: SPLUNK ES / Malicious PowerShell Process With Obfuscation Techniques
+  / Mimikatz - Cradlecraft PsSendKeys
+name: escu_014
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 90c76bd616efee6d7c98dc6c1dcc6e99
+  id: T1059.001
+  name: Mimikatz - Cradlecraft PsSendKeys
+  target_role: workstation

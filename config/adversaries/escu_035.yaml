@@ -1,0 +1,13 @@
+caldera_adversary_id: a7faa4ca-84cb-419a-a649-785e9907e933
+description: T1003.003 | credential-access | ESCU - Credential Dumping via Copy Command
+  from Shadow Copy - Rule
+display_name: SPLUNK ES / Credential Dumping via Copy Command from Shadow Copy / Create
+  Volume Shadow Copy remotely (WMI) with esentutl
+name: escu_035
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 053d6505f7c4cf792b0ab2f262dff95a
+  id: T1003.003
+  name: Create Volume Shadow Copy remotely (WMI) with esentutl
+  target_role: workstation

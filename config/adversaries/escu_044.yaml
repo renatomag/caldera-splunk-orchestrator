@@ -1,0 +1,12 @@
+caldera_adversary_id: 204b903b-fd66-4842-a762-6b04abc0e9db
+description: T1490 | impact | ESCU - BCDEdit Failure Recovery Modification - Rule
+display_name: SPLUNK ES / BCDEdit Failure Recovery Modification / Windows - Disable
+  Windows Recovery Console Repair
+name: escu_044
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 8467c994685ccf178db166964bd80fab
+  id: T1490
+  name: Windows - Disable Windows Recovery Console Repair
+  target_role: workstation

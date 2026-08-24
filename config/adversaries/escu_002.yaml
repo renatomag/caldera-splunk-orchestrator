@@ -1,0 +1,13 @@
+caldera_adversary_id: 3bf8f3ac-411a-4d1f-b2e5-adfa61385e47
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  File - Rule
+display_name: SPLUNK ES / Detect Remote Access Software Usage File / GoToAssist Files
+  Detected Test on Windows
+name: escu_002
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: b6ebae300e5ff115e965cc9179d4f831
+  id: T1219
+  name: GoToAssist Files Detected Test on Windows
+  target_role: workstation

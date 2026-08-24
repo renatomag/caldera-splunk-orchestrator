@@ -1,0 +1,12 @@
+caldera_adversary_id: 60967025-4990-4850-a503-a3c03d2dde60
+description: T1140 | defense-evasion | ESCU - CertUtil With Decode Argument - Rule
+display_name: SPLUNK ES / CertUtil With Decode Argument / Deobfuscate/Decode Files
+  Or Information
+name: escu_018
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 26c0843592bd870dab849c9f682b09da
+  id: T1140
+  name: Deobfuscate/Decode Files Or Information
+  target_role: workstation

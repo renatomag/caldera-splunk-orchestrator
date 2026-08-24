@@ -1,0 +1,13 @@
+caldera_adversary_id: 20247146-f2af-4983-93be-3f4b417d710e
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+display_name: SPLUNK ES / CMD Carry Out String Command Parameter / Command prompt
+  writing script to file then executes it
+name: escu_011
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 9003977ffd2779fd5877d65f970af885
+  id: T1059.003
+  name: Command prompt writing script to file then executes it
+  target_role: workstation

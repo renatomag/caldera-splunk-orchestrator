@@ -1,0 +1,13 @@
+caldera_adversary_id: 121ed2f4-226e-41ad-9b2f-5653ecbf8529
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+display_name: SPLUNK ES / CMD Carry Out String Command Parameter / Writes text to
+  a file and displays it.
+name: escu_013
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: e0d7856bf28741789ecf1e0654d96995
+  id: T1059.003
+  name: Writes text to a file and displays it.
+  target_role: workstation

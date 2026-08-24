@@ -1,0 +1,12 @@
+caldera_adversary_id: 1b2bd9d3-91fa-4b15-a00c-bb1183f5abcd
+description: T1003.003 | credential-access | ESCU - Creation of Shadow Copy - Rule
+display_name: SPLUNK ES / Creation of Shadow Copy / Create Volume Shadow Copy with
+  vssadmin
+name: escu_041
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 6b55240dbd6e02df957284328938fcf6
+  id: T1003.003
+  name: Create Volume Shadow Copy with vssadmin
+  target_role: workstation

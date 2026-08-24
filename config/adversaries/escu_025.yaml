@@ -1,0 +1,13 @@
+caldera_adversary_id: 98ccbb87-7642-40db-ada4-c8f3bb9365df
+description: T1218.005 | defense-evasion | ESCU - Detect mshta inline hta execution
+  - Rule
+display_name: SPLUNK ES / Detect mshta inline hta execution / Mshta executes VBScript
+  to execute malicious command
+name: escu_025
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: e5ca57d20f8608e2acc0808b8dd8726c
+  id: T1218.005
+  name: Mshta executes VBScript to execute malicious command
+  target_role: workstation

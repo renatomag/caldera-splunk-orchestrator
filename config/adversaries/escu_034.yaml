@@ -1,0 +1,13 @@
+caldera_adversary_id: f15b82ae-5589-4f02-812b-713c8cfa43de
+description: T1003.003 | credential-access | ESCU - Credential Dumping via Copy Command
+  from Shadow Copy - Rule
+display_name: SPLUNK ES / Credential Dumping via Copy Command from Shadow Copy / Copy
+  NTDS.dit from Volume Shadow Copy
+name: escu_034
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 548f5aa3ec2fcfc6872ee10975480f29
+  id: T1003.003
+  name: Copy NTDS.dit from Volume Shadow Copy
+  target_role: workstation

@@ -1,0 +1,13 @@
+caldera_adversary_id: 7d5b6a25-ba39-4217-82bf-a7e2516466d9
+description: T1003.003 | credential-access | ESCU - Creation of Shadow Copy with wmic
+  and powershell - Rule
+display_name: SPLUNK ES / Creation of Shadow Copy with wmic and powershell / Create
+  Volume Shadow Copy with WMI
+name: escu_039
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: cf60378dd1bbaccd4e7391c0317da202
+  id: T1003.003
+  name: Create Volume Shadow Copy with WMI
+  target_role: workstation

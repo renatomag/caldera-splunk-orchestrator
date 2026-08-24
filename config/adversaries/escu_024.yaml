@@ -1,0 +1,13 @@
+caldera_adversary_id: 14071b33-c1c1-40fa-b85b-6bfe7c2faddd
+description: T1553.004 | defense-evasion | ESCU - Attempt To Add Certificate To Untrusted
+  Store - Rule
+display_name: SPLUNK ES / Attempt To Add Certificate To Untrusted Store / Install
+  root CA on Windows with certutil
+name: escu_024
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 2cdcf1010a524231a26b5f3c6025eb91
+  id: T1553.004
+  name: Install root CA on Windows with certutil
+  target_role: workstation

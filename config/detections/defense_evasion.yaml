@@ -1,0 +1,181 @@
+namespace: defense_evasion
+
+detections:
+  disable_log_wevtutil:
+    display_name: "Event Log Channel Disabled via wevtutil"
+    mitre_technique: T1562.002
+    splunk_index: notable
+    search_name_pattern: "ESCU - Disable Logs Using WevtUtil - Rule"
+    correlation_search_name: "ESCU - Disable Logs Using WevtUtil - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*wevtutil*" OR CommandLine="*wevtutil*")
+      CommandLine="*/e:false*"
+      | stats count
+    severity: high
+    required: true
+
+  clear_logs_wevtutil:
+    display_name: "Windows Event Log Cleared via wevtutil"
+    mitre_technique: T1070.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Suspicious wevtutil Usage - Rule"
+    correlation_search_name: "ESCU - Suspicious wevtutil Usage - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*wevtutil*" OR CommandLine="*wevtutil*")
+      (CommandLine="* cl *" OR CommandLine="*clear-log*")
+      | stats count
+    severity: high
+    required: true
+
+  regsvr32_bypass:
+    display_name: "Regsvr32 Application Control Bypass via scrobj.dll"
+    mitre_technique: T1218.010
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect Regsvr32 Application Control Bypass - Rule"
+    correlation_search_name: "ESCU - Detect Regsvr32 Application Control Bypass - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*regsvr32*" OR CommandLine="*regsvr32*")
+      CommandLine="*scrobj*"
+      | stats count
+    severity: medium
+    required: true
+
+  disable_defender:
+    display_name: "Windows Defender Behavior Monitoring Disabled"
+    mitre_technique: T1562.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Disable Windows Behavior Monitoring - Rule"
+    correlation_search_name: "ESCU - Disable Windows Behavior Monitoring - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*powershell*"
+      CommandLine="*DisableBehaviorMonitoring*"
+      | stats count
+    severity: high
+    required: true
+
+  defender_exclusion_folder:
+    display_name: "Windows Defender Folder Scan Exclusion Added"
+    mitre_technique: T1562.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Add or Set Windows Defender Exclusion - Rule"
+    correlation_search_name: "ESCU - Add or Set Windows Defender Exclusion - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*powershell*"
+      CommandLine="*Add-MpPreference*ExclusionPath*"
+      | stats count
+    severity: high
+    required: true
+
+  defender_registry:
+    display_name: "Windows Defender Disabled via Registry"
+    mitre_technique: T1562.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Disable Defender AntiVirus Registry - Rule"
+    correlation_search_name: "ESCU - Disable Defender AntiVirus Registry - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=13
+      TargetObject="*Windows Defender*DisableAntiVirus*"
+      | stats count
+    severity: high
+    required: true
+
+  hide_files_registry:
+    display_name: "Hidden Files Attribute Set via Registry"
+    mitre_technique: T1564.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Disable Show Hidden Files - Rule"
+    correlation_search_name: "ESCU - Disable Show Hidden Files - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=13
+      TargetObject="*Explorer*Hidden*"
+      | stats count
+    severity: medium
+    required: false
+
+  remove_admin_shares:
+    display_name: "Administrative Shares Removed via net.exe"
+    mitre_technique: T1070.005
+    splunk_index: notable
+    search_name_pattern: "ESCU - Create or delete windows shares using net exe - Rule"
+    correlation_search_name: "ESCU - Create or delete windows shares using net exe - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*net.exe*" OR Image="*net1.exe*")
+      CommandLine="*share*delete*"
+      | stats count
+    severity: medium
+    required: true
+
+  certutil_decode:
+    display_name: "CertUtil Used to Decode an Encoded File"
+    mitre_technique: T1140
+    splunk_index: notable
+    search_name_pattern: "ESCU - CertUtil With Decode Argument - Rule"
+    correlation_search_name: "ESCU - CertUtil With Decode Argument - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*certutil*" OR CommandLine="*certutil*")
+      CommandLine="*-decode*"
+      | stats count
+    severity: medium
+    required: true
+
+  root_ca_certutil:
+    display_name: "Rogue Root CA Installed via CertUtil"
+    mitre_technique: T1553.004
+    splunk_index: notable
+    search_name_pattern: "ESCU - Attempt To Add Certificate To Untrusted Store - Rule"
+    correlation_search_name: "ESCU - Attempt To Add Certificate To Untrusted Store - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*certutil*" OR CommandLine="*certutil*")
+      CommandLine="*-addstore*"
+      | stats count
+    severity: high
+    required: true
+
+  chm_remote_payload:
+    display_name: "CHM Remote Payload Executed via HH.exe"
+    mitre_technique: T1218.001
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect HTML Help URL in Command Line - Rule"
+    correlation_search_name: "ESCU - Detect HTML Help URL in Command Line - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*hh.exe*" OR CommandLine="*hh.exe*")
+      CommandLine="*http*"
+      | stats count
+    severity: high
+    required: true
+
+  mshta_inline:
+    display_name: "MSHTA Executing Inline HTA or VBScript"
+    mitre_technique: T1218.005
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect mshta inline hta execution - Rule"
+    correlation_search_name: "ESCU - Detect mshta inline hta execution - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (Image="*mshta*" OR CommandLine="*mshta*")
+      (CommandLine="*vbscript*" OR CommandLine="*javascript*")
+      | stats count
+    severity: high
+    required: true
+
+  uac_bypass_registry:
+    display_name: "UAC Disabled for Remote Connections via Registry"
+    mitre_technique: T1548.002
+    splunk_index: notable
+    search_name_pattern: "ESCU - Disabling Remote User Account Control - Rule"
+    correlation_search_name: "ESCU - Disabling Remote User Account Control - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=13
+      TargetObject="*LocalAccountTokenFilterPolicy*"
+      | stats count
+    severity: high
+    required: true

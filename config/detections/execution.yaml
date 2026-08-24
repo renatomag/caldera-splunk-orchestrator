@@ -1,0 +1,70 @@
+namespace: execution
+
+detections:
+  powershell_obfuscation:
+    display_name: "PowerShell Obfuscation Detected"
+    mitre_technique: T1059.001
+    splunk_index: notable
+    search_name_pattern: "*PowerShell*Obfus*"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*powershell.exe"
+      (CommandLine="*-enc*" OR CommandLine="*-EncodedCommand*" OR CommandLine="*[char]*")
+      | stats count
+    severity: high
+    required: true
+
+  powershell_download:
+    display_name: "PowerShell Download Cradle"
+    mitre_technique: T1059.001
+    splunk_index: notable
+    search_name_pattern: "*PowerShell*Download*"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*powershell.exe"
+      (CommandLine="*WebClient*" OR CommandLine="*DownloadString*" OR CommandLine="*IEX*")
+      | stats count
+    severity: high
+    required: false
+
+  cmd_scripting:
+    display_name: "CMD Scripting with Carry-Out String Parameter"
+    mitre_technique: T1059.003
+    splunk_index: notable
+    search_name_pattern: "ESCU - CMD Carry Out String Command Parameter - Rule"
+    correlation_search_name: "ESCU - CMD Carry Out String Command Parameter - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*cmd.exe"
+      CommandLine="*/c *"
+      | stats count
+    severity: medium
+    required: true
+
+  blackbyte_print_bomb:
+    display_name: "Prohibited Application Spawning cmd.exe (BlackByte Ransomware)"
+    mitre_technique: T1059.003
+    splunk_index: notable
+    search_name_pattern: "ESCU - Detect Prohibited Applications Spawning cmd exe - Rule"
+    correlation_search_name: "ESCU - Detect Prohibited Applications Spawning cmd exe - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*cmd.exe"
+      CommandLine="*/c*print*"
+      | stats count
+    severity: high
+    required: true
+
+  powershell_obfuscated_mimikatz:
+    display_name: "Obfuscated PowerShell Process (Mimikatz Cradle)"
+    mitre_technique: T1059.001
+    splunk_index: notable
+    search_name_pattern: "Endpoint - ESCU - Malicious PowerShell Process With Obfuscation Techniques - Rule - TD SYNNEX - Rule"
+    correlation_search_name: "Endpoint - ESCU - Malicious PowerShell Process With Obfuscation Techniques - Rule - TD SYNNEX - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      Image="*powershell*"
+      CommandLine="*PsSendKeys*"
+      | stats count
+    severity: high
+    required: true

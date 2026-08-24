@@ -1,0 +1,80 @@
+namespace: impact
+
+detections:
+  vss_deletion:
+    display_name: "Shadow Copy Deletion"
+    mitre_technique: T1490
+    splunk_index: notable
+    search_name_pattern: "ESCU - Creation of Shadow Copy - Rule"
+    correlation_search_name: "ESCU - Creation of Shadow Copy - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (CommandLine="*vssadmin*delete*" OR CommandLine="*wmic*shadowcopy*delete*"
+      OR CommandLine="*Win32_ShadowCopy*")
+      | stats count
+    severity: critical
+    required: true
+
+  inhibit_recovery:
+    display_name: "System Recovery Disabled via bcdedit"
+    mitre_technique: T1490
+    splunk_index: notable
+    search_name_pattern: "ESCU - BCDEdit Failure Recovery Modification - Rule"
+    correlation_search_name: "ESCU - BCDEdit Failure Recovery Modification - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      CommandLine="*bcdedit*recoveryenabled*no*"
+      | stats count
+    severity: high
+    required: true
+
+  wbadmin_delete:
+    display_name: "Windows Backup Catalog Deleted"
+    mitre_technique: T1490
+    splunk_index: notable
+    search_name_pattern: "ESCU - WBAdmin Delete System Backups - Rule"
+    correlation_search_name: "ESCU - WBAdmin Delete System Backups - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      CommandLine="*wbadmin*delete*catalog*"
+      | stats count
+    severity: high
+    required: false
+
+  ransomware_file_extension:
+    display_name: "Ransomware File Extension Created (.akira)"
+    mitre_technique: T1486
+    splunk_index: notable
+    search_name_pattern: "ESCU - Windows Suspicious Process File Path - Rule"
+    correlation_search_name: "ESCU - Windows Suspicious Process File Path - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (CommandLine="*.akira*" OR CommandLine="*akira*")
+      | stats count
+    severity: critical
+    required: true
+
+  ransom_note:
+    display_name: "Ransom Note Created or Displayed"
+    mitre_technique: T1491.001
+    splunk_index: notable
+    search_name_pattern: "*ransom*"
+    fallback_spl: >
+      index=wineventlog EventCode=11
+      (TargetFilename="*readme*" OR TargetFilename="*YOUR_FILES*" OR TargetFilename="*READ_ME*")
+      | stats count
+    severity: high
+    required: false
+
+  vss_delete_shadows:
+    display_name: "Shadow Copies Deleted via vssadmin or wmic"
+    mitre_technique: T1490
+    splunk_index: notable
+    search_name_pattern: "ESCU - Deleting Shadow Copies - Rule"
+    correlation_search_name: "ESCU - Deleting Shadow Copies - Rule"
+    fallback_spl: >
+      index=wineventlog EventCode=1
+      (CommandLine="*vssadmin*delete*shadows*" OR CommandLine="*wmic*shadowcopy*delete*")
+      | stats count
+    severity: critical
+    required: true

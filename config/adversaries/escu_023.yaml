@@ -1,0 +1,11 @@
+caldera_adversary_id: baa50d66-1a6e-491e-9e72-ba22347d154b
+description: T1564.001 | defense-evasion | ESCU - Disable Show Hidden Files - Rule
+display_name: SPLUNK ES / Disable Show Hidden Files / Hide Files Through Registry
+name: escu_023
+targets:
+- role: workstation
+techniques:
+- caldera_ability_id: 6ac8f48413127289ac42b76a0785b08f
+  id: T1564.001
+  name: Hide Files Through Registry
+  target_role: workstation
