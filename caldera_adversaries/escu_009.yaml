@@ -1,0 +1,7 @@
+id: cc911075-53e3-4f80-bac3-608d5e95418d
+name: SPLUNK ES / BITSAdmin Download File / Windows - BITSAdmin BITS Download
+description: T1105 | command-and-control | ESCU - BITSAdmin Download File - Rule
+atomic_ordering:
+- 68f09bfb5a5a28c11608d106eac63abd
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

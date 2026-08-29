@@ -1,0 +1,9 @@
+id: e863da10-7826-4911-8b1e-94c54524443e
+name: SPLUNK ES / CMD Carry Out String Command Parameter / Command Prompt read contents
+  from CMD file and execute
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+atomic_ordering:
+- 5c3b5a0a1fe7b7ece6846e4fa894b5ad
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

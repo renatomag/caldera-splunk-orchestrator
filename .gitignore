@@ -16,3 +16,6 @@ govc
 
 # Discovery script output
 /tmp/discovery_output.json
+
+# Generated adversary files are intentionally committed to caldera_adversaries/
+# Nothing to ignore there

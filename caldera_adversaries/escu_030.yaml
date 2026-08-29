@@ -1,0 +1,9 @@
+id: db1f0d5a-666d-47c8-81d2-25a8dae0995a
+name: SPLUNK ES / Add or Set Windows Defender Exclusion / Tamper with Windows Defender
+  Evade Scanning -Extension
+description: T1562.001 | defense-evasion | ESCU - Add or Set Windows Defender Exclusion
+  - Rule
+atomic_ordering:
+- e0946bc3b8b888d6c4cdf3f023fe3c0b
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

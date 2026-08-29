@@ -1,0 +1,9 @@
+id: d42c636e-6139-4071-915f-004370eaed2a
+name: SPLUNK ES / Disable Windows Behavior Monitoring / Tamper with Windows Defender
+  ATP using Aliases - PowerShell
+description: T1562.001 | defense-evasion | ESCU - Disable Windows Behavior Monitoring
+  - Rule
+atomic_ordering:
+- 32047c4f30d4e65ebc9b22b9b8368bca
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

@@ -1,0 +1,9 @@
+id: a743f883-fd86-465f-9bd8-19dd7104f7fe
+name: SPLUNK ES / Windows Credential Dumping LSASS Memory Createdump / Dump LSASS
+  with createdump.exe from .Net v5
+description: T1003.001 | credential-access | Endpoint - ESCU - Windows Credential
+  Dumping LSASS Memory Createdump - Rule - TD SYNNEX - Rule
+atomic_ordering:
+- 8e01631039faf6a9a84df376bf9ad0f1
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

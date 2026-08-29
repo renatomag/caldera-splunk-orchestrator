@@ -1,0 +1,9 @@
+id: 4bed69ec-ecd1-4c22-ae5e-28e65897b631
+name: SPLUNK ES / Creation of Shadow Copy with wmic and powershell / Create Volume
+  Shadow Copy with Powershell
+description: T1003.003 | credential-access | Endpoint - ESCU - Creation of Shadow
+  Copy with wmic and powershell - Rule - TD SYNNEX - Rule
+atomic_ordering:
+- 6dc5c587fd22d65b81a443b7ce065ab1
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

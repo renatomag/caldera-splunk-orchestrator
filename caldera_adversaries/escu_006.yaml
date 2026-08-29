@@ -1,0 +1,9 @@
+id: 9e34f4cd-1186-4029-8a61-b9b2d44c2600
+name: SPLUNK ES / Detect Remote Access Software Usage Process / GoToAssist Files Detected
+  Test on Windows
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  Process - Rule
+atomic_ordering:
+- b6ebae300e5ff115e965cc9179d4f831
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

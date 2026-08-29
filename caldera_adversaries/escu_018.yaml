@@ -1,0 +1,7 @@
+id: 60967025-4990-4850-a503-a3c03d2dde60
+name: SPLUNK ES / CertUtil With Decode Argument / Deobfuscate/Decode Files Or Information
+description: T1140 | defense-evasion | ESCU - CertUtil With Decode Argument - Rule
+atomic_ordering:
+- 26c0843592bd870dab849c9f682b09da
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

@@ -1,0 +1,7 @@
+id: 70acc920-9702-43fc-aca3-1ea7243aa1f4
+name: SPLUNK ES / CertUtil With Decode Argument / Certutil Rename and Decode
+description: T1140 | defense-evasion | ESCU - CertUtil With Decode Argument - Rule
+atomic_ordering:
+- e510c5fd2f1ea418990fcf06775bc9b4
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

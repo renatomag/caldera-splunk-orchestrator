@@ -1,0 +1,9 @@
+id: cbfb0792-fc36-4e3d-8ab2-5033d8b27435
+name: SPLUNK ES / Detect Remote Access Software Usage Process / LogMeIn Files Detected
+  Test on Windows
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  Process - Rule
+atomic_ordering:
+- f1b3fca18d7465cd10e5a7477a3bf97d
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

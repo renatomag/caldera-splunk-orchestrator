@@ -1,0 +1,9 @@
+id: 51df42bd-1416-417e-9c0a-309c4948ad01
+name: SPLUNK ES / Detect Prohibited Applications Spawning cmd exe / Simulate BlackByte
+  Ransomware Print Bombing
+description: T1059.003 | execution | ESCU - Detect Prohibited Applications Spawning
+  cmd exe - Rule
+atomic_ordering:
+- 942d94dff3cc494bacf5517e775321a7
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

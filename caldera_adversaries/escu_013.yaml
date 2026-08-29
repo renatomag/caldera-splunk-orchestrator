@@ -1,0 +1,9 @@
+id: 121ed2f4-226e-41ad-9b2f-5653ecbf8529
+name: SPLUNK ES / CMD Carry Out String Command Parameter / Writes text to a file and
+  displays it.
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+atomic_ordering:
+- e0d7856bf28741789ecf1e0654d96995
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

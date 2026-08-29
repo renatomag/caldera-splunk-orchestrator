@@ -1,0 +1,9 @@
+id: f15b82ae-5589-4f02-812b-713c8cfa43de
+name: SPLUNK ES / Credential Dumping via Copy Command from Shadow Copy / Copy NTDS.dit
+  from Volume Shadow Copy
+description: T1003.003 | credential-access | ESCU - Credential Dumping via Copy Command
+  from Shadow Copy - Rule
+atomic_ordering:
+- 548f5aa3ec2fcfc6872ee10975480f29
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

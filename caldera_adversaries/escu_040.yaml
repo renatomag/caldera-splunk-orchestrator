@@ -1,0 +1,7 @@
+id: 7fbc629e-5f22-4aea-95f6-c895ba66f08b
+name: SPLUNK ES / Creation of Shadow Copy / Create Volume Shadow Copy with WMI
+description: T1003.003 | credential-access | ESCU - Creation of Shadow Copy - Rule
+atomic_ordering:
+- cf60378dd1bbaccd4e7391c0317da202
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

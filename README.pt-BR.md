@@ -52,6 +52,7 @@ Os adversários são executados em uma sequência realista de ataque, de modo qu
 | Componente | Detalhes |
 |---|---|
 | CALDERA | Rodando localmente na porta 8888, chave de API red exportada como `CALDERA_API_KEY` |
+| Adversários CALDERA | Os 47 adversários devem estar carregados no CALDERA antes da primeira execução — veja **Carregando adversários no CALDERA** abaixo |
 | Agente Sandcat | Pré-implantado na VM Windows alvo, conectando ao CALDERA |
 | VMware vCenter | **Obrigatório** — o orquestrador usa `govc` para reverter o snapshot da VM após cada operação |
 | Snapshot da VM | Tirado com a VM **ligada** e o Sandcat em execução, para que o revert retome pelo estado de memória (sem boot do Windows) |
@@ -289,6 +290,25 @@ Se o serviço for reiniciado, os IDs são recarregados do arquivo JSON e a limpe
 
 ---
 
+## Carregando adversários no CALDERA
+
+O repositório inclui 47 arquivos YAML de adversários prontos em `caldera_adversaries/`, já no formato nativo do CALDERA. Copie-os para a sua instalação do CALDERA e reinicie:
+
+```bash
+cp -r caldera_adversaries/* <caldera_dir>/data/adversaries/
+sudo systemctl restart caldera
+```
+
+Para verificar se foram carregados, acesse a interface do CALDERA em **Adversaries** — todas as 47 entradas `escu_*` devem aparecer.
+
+Se precisar regenerar esses arquivos (por exemplo, após editar os perfis em `config/adversaries/`):
+
+```bash
+python generate_caldera_adversaries.py
+```
+
+---
+
 ## Adicionando um novo adversário
 
 1. Criar o adversário no CALDERA (adicionar a habilidade) e copiar o UUID gerado
@@ -303,22 +323,25 @@ Se o serviço for reiniciado, os IDs são recarregados do arquivo JSON e a limpe
 
 ```
 caldera-splunk-orchestrator/
-├── main.py                     # Ponto de entrada da CLI e verificação --dry-run
-├── orchestrator.py             # Loop de agendamento, execução por adversário, revert da VM
-├── caldera_client.py           # Cliente REST do CALDERA (operações, agentes, confiança)
-├── vmware_client.py            # Wrapper do govc — snapshot.revert via vCenter
-├── reporter.py                 # Gerador de relatórios (log / webhook)
-├── config_loader.py            # Loader de YAML com expansão de variáveis de ambiente
-├── models.py                   # Modelos Pydantic para configuração
-├── splunk_client.py            # Cliente REST do Splunk (validação de detecções, uso futuro)
-├── discover_mappings.py        # Script de configuração: busca habilidades CALDERA + buscas ESCU
+├── main.py                          # Ponto de entrada da CLI e verificação --dry-run
+├── orchestrator.py                  # Loop de agendamento, execução por adversário, revert da VM
+├── caldera_client.py                # Cliente REST do CALDERA (operações, agentes, confiança)
+├── vmware_client.py                 # Wrapper do govc — snapshot.revert via vCenter
+├── reporter.py                      # Gerador de relatórios (log / webhook)
+├── config_loader.py                 # Loader de YAML com expansão de variáveis de ambiente
+├── models.py                        # Modelos Pydantic para configuração
+├── splunk_client.py                 # Cliente REST do Splunk (validação de detecções, uso futuro)
+├── discover_mappings.py             # Script de configuração: busca habilidades CALDERA + buscas ESCU
+├── generate_caldera_adversaries.py  # Regenera caldera_adversaries/ a partir de config/adversaries/
 ├── config/
-│   ├── settings.yaml           # Configuração principal (edite este arquivo)
+│   ├── settings.yaml.example        # Template de configuração — copie para settings.yaml e preencha
 │   └── adversaries/
-│       ├── escu_001.yaml       # Um arquivo por adversário (47 no total)
+│       ├── escu_001.yaml            # Um arquivo por adversário (47 no total)
 │       └── ...
+├── caldera_adversaries/             # YAMLs de adversários prontos para importar no CALDERA (47 no total)
+│   ├── escu_001.yaml
+│   └── ...
 ├── data/
-│   └── prev_cycle_ops.json     # IDs de operações persistidos para limpeza no próximo ciclo
-├── detection_ability_map.json  # Mapeamento fonte: detecção ESCU ↔ habilidade CALDERA
-└── govc                        # Binário govc (VMware CLI)
+│   └── prev_cycle_ops.json          # IDs de operações persistidos para limpeza no próximo ciclo
+└── detection_ability_map.json       # Mapeamento fonte: detecção ESCU ↔ habilidade CALDERA
 ```

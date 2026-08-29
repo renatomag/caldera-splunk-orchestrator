@@ -1,0 +1,8 @@
+id: 9ecf4930-89d0-4d3d-a6ce-2524097959ee
+name: SPLUNK ES / Disabling Remote User Account Control / UAC bypass registry
+description: T1548.002 | privilege-escalation | ESCU - Disabling Remote User Account
+  Control - Rule
+atomic_ordering:
+- 665432a4-42e7-4ee1-af19-a9a8c9455d0c
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

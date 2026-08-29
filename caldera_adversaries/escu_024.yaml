@@ -1,0 +1,9 @@
+id: 14071b33-c1c1-40fa-b85b-6bfe7c2faddd
+name: SPLUNK ES / Attempt To Add Certificate To Untrusted Store / Install root CA
+  on Windows with certutil
+description: T1553.004 | defense-evasion | ESCU - Attempt To Add Certificate To Untrusted
+  Store - Rule
+atomic_ordering:
+- 2cdcf1010a524231a26b5f3c6025eb91
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

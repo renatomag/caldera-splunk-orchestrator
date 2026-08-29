@@ -1,0 +1,8 @@
+id: 4879061c-fa33-4ae9-8c85-d1489fdf43f5
+name: SPLUNK ES / Detect mshta inline hta execution / Mshta used to Execute PowerShell
+description: T1218.005 | defense-evasion | ESCU - Detect mshta inline hta execution
+  - Rule
+atomic_ordering:
+- 54a7ac8fc8991511de9993983d3d3215
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

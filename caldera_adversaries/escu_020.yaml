@@ -1,0 +1,8 @@
+id: 12c1cf0f-06be-4746-bec8-a15f47863f32
+name: SPLUNK ES / Disable Windows Behavior Monitoring / Disable Windows Defender All
+description: T1562.001 | defense-evasion | ESCU - Disable Windows Behavior Monitoring
+  - Rule
+atomic_ordering:
+- b007f6e8-4a87-4440-8888-29ceab047d9b
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

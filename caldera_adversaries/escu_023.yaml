@@ -1,0 +1,7 @@
+id: baa50d66-1a6e-491e-9e72-ba22347d154b
+name: SPLUNK ES / Disable Show Hidden Files / Hide Files Through Registry
+description: T1564.001 | defense-evasion | ESCU - Disable Show Hidden Files - Rule
+atomic_ordering:
+- 6ac8f48413127289ac42b76a0785b08f
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

@@ -1,0 +1,9 @@
+id: 06bf667f-e2c1-41b3-8974-3e8e9bfd5d05
+name: SPLUNK ES / Creation of Shadow Copy with wmic and powershell / Create Volume
+  Shadow Copy with Powershell
+description: T1003.003 | credential-access | ESCU - Creation of Shadow Copy with wmic
+  and powershell - Rule
+atomic_ordering:
+- 6dc5c587fd22d65b81a443b7ce065ab1
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

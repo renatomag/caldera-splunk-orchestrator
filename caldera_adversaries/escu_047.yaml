@@ -1,0 +1,8 @@
+id: 7e38c2ab-f17a-4c82-9096-797f42f3a048
+name: SPLUNK ES / Detect SharpHound Command-Line Arguments / SharpHound3 - LocalAdmin
+description: T1069.001 | discovery | ESCU - Detect SharpHound Command-Line Arguments
+  - Rule
+atomic_ordering:
+- 608e19b5f7e210ba73e207289e5a1314
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

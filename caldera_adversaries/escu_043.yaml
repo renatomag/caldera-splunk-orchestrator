@@ -1,0 +1,7 @@
+id: bab4d378-96aa-4ea7-8ae6-3295f9e349da
+name: SPLUNK ES / Deleting Shadow Copies / Windows - Delete Volume Shadow Copies
+description: T1490 | impact | ESCU - Deleting Shadow Copies - Rule
+atomic_ordering:
+- 153905affadb36241ced3d3b12ba0481
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

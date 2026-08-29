@@ -1,0 +1,9 @@
+id: 457798c3-7308-43e7-a551-be1ee700a835
+name: SPLUNK ES / Domain Controller Discovery with Nltest / Remote System Discovery
+  - nltest
+description: T1018 | discovery | ESCU - Domain Controller Discovery with Nltest -
+  Rule
+atomic_ordering:
+- fcb5b04ee56a74c73f29b9eecb6d4b17
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

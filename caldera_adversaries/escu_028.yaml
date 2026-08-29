@@ -1,0 +1,9 @@
+id: 98eb8269-a401-48af-8d4b-0816594f62dc
+name: SPLUNK ES / Create or delete windows shares using net exe / Remove Administrative
+  Shares
+description: T1070.005 | defense-evasion | ESCU - Create or delete windows shares
+  using net exe - Rule
+atomic_ordering:
+- 1b43591006b8e25b8df16ee52f0832bf
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

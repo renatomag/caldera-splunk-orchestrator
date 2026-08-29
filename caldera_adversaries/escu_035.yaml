@@ -1,0 +1,9 @@
+id: a7faa4ca-84cb-419a-a649-785e9907e933
+name: SPLUNK ES / Credential Dumping via Copy Command from Shadow Copy / Create Volume
+  Shadow Copy remotely (WMI) with esentutl
+description: T1003.003 | credential-access | ESCU - Credential Dumping via Copy Command
+  from Shadow Copy - Rule
+atomic_ordering:
+- 053d6505f7c4cf792b0ab2f262dff95a
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

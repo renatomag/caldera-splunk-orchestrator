@@ -1,0 +1,9 @@
+id: 250449b0-7c67-4e0f-8369-789e65b95984
+name: SPLUNK ES / Detect Remote Access Software Usage File / TeamViewer Files Detected
+  Test on Windows
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  File - Rule
+atomic_ordering:
+- f50ec080343f1bec4e739dd20675c349
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

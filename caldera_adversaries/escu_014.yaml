@@ -1,0 +1,9 @@
+id: 5e99ff3a-c0b4-4d37-b748-caa5beea79fd
+name: SPLUNK ES / Malicious PowerShell Process With Obfuscation Techniques / Mimikatz
+  - Cradlecraft PsSendKeys
+description: T1059.001 | execution | Endpoint - ESCU - Malicious PowerShell Process
+  With Obfuscation Techniques - Rule - TD SYNNEX - Rule
+atomic_ordering:
+- 90c76bd616efee6d7c98dc6c1dcc6e99
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

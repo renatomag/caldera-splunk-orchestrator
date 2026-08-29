@@ -1,0 +1,9 @@
+id: 15b157e6-7c9e-4ac6-8d84-d04ff9ca0e69
+name: SPLUNK ES / Detect Remote Access Software Usage Process / AnyDesk Files Detected
+  Test on Windows
+description: T1219 | command-and-control | ESCU - Detect Remote Access Software Usage
+  Process - Rule
+atomic_ordering:
+- aada5380e7d0a4c7b71f2a324d9d5327
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

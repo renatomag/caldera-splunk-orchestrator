@@ -1,0 +1,9 @@
+id: 32ddb8c9-f3a8-4b9a-a953-e0e837951f4d
+name: SPLUNK ES / CMD Carry Out String Command Parameter / Simulate BlackByte Ransomware
+  Print Bombing
+description: T1059.003 | execution | ESCU - CMD Carry Out String Command Parameter
+  - Rule
+atomic_ordering:
+- 942d94dff3cc494bacf5517e775321a7
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

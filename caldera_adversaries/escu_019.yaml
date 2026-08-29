@@ -1,0 +1,9 @@
+id: c960493a-987e-4519-a211-e6560cdd2233
+name: SPLUNK ES / Detect HTML Help URL in Command Line / Compiled HTML Help Remote
+  Payload
+description: T1218.001 | defense-evasion | ESCU - Detect HTML Help URL in Command
+  Line - Rule
+atomic_ordering:
+- 6d5da876fe45a933257a96c14c3132f0
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

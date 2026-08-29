@@ -52,6 +52,7 @@ Adversaries run in a realistic attack sequence so the telemetry in Splunk reflec
 | Component | Details |
 |---|---|
 | CALDERA | Running locally on port 8888, red API key exported as `CALDERA_API_KEY` |
+| CALDERA adversaries | The 47 adversaries must be loaded into CALDERA before first run — see **Loading adversaries into CALDERA** below |
 | Sandcat agent | Pre-deployed on the target Windows VM, beaconing to CALDERA |
 | VMware vCenter | Required — the orchestrator uses `govc` to revert the VM snapshot after each operation |
 | VM snapshot | Taken while the VM was **powered on** with Sandcat running, so revert resumes from memory (no Windows boot) |
@@ -289,6 +290,25 @@ If the service is restarted, the IDs are reloaded from the JSON file so the clea
 
 ---
 
+## Loading adversaries into CALDERA
+
+The repo includes 47 pre-built adversary YAML files in `caldera_adversaries/`, already in CALDERA's native format. Copy them into your CALDERA installation and restart:
+
+```bash
+cp -r caldera_adversaries/* <caldera_dir>/data/adversaries/
+sudo systemctl restart caldera
+```
+
+To verify they loaded, check the CALDERA UI under **Adversaries** — all 47 `escu_*` entries should appear.
+
+If you ever need to regenerate these files (e.g., after editing the adversary profiles in `config/adversaries/`):
+
+```bash
+python generate_caldera_adversaries.py
+```
+
+---
+
 ## Adding a new adversary
 
 1. Create the adversary in CALDERA (add the ability to it) and copy its UUID
@@ -303,22 +323,25 @@ If the service is restarted, the IDs are reloaded from the JSON file so the clea
 
 ```
 caldera-splunk-orchestrator/
-├── main.py                     # CLI entry point and --dry-run connectivity check
-├── orchestrator.py             # Scheduling loop, per-adversary execution, VM revert
-├── caldera_client.py           # CALDERA REST API client (operations, agents, trust)
-├── vmware_client.py            # govc wrapper — snapshot.revert via vCenter
-├── reporter.py                 # Log / webhook report builder
-├── config_loader.py            # YAML loader with env-var expansion and validation
-├── models.py                   # Pydantic config models
-├── splunk_client.py            # Splunk REST API client (detection validation, future use)
-├── discover_mappings.py        # One-off setup script: fetch CALDERA abilities + ESCU searches
+├── main.py                          # CLI entry point and --dry-run connectivity check
+├── orchestrator.py                  # Scheduling loop, per-adversary execution, VM revert
+├── caldera_client.py                # CALDERA REST API client (operations, agents, trust)
+├── vmware_client.py                 # govc wrapper — snapshot.revert via vCenter
+├── reporter.py                      # Log / webhook report builder
+├── config_loader.py                 # YAML loader with env-var expansion and validation
+├── models.py                        # Pydantic config models
+├── splunk_client.py                 # Splunk REST API client (detection validation, future use)
+├── discover_mappings.py             # One-off setup script: fetch CALDERA abilities + ESCU searches
+├── generate_caldera_adversaries.py  # Regenerate caldera_adversaries/ from config/adversaries/
 ├── config/
-│   ├── settings.yaml           # Main configuration (edit this)
+│   ├── settings.yaml.example        # Configuration template — copy to settings.yaml and fill in
 │   └── adversaries/
-│       ├── escu_001.yaml       # One file per adversary (47 total)
+│       ├── escu_001.yaml            # One file per adversary (47 total)
 │       └── ...
+├── caldera_adversaries/             # Ready-to-import CALDERA adversary YAMLs (47 total)
+│   ├── escu_001.yaml
+│   └── ...
 ├── data/
-│   └── prev_cycle_ops.json     # Persisted operation IDs for next-cycle cleanup
-├── detection_ability_map.json  # Source mapping: ESCU detection ↔ CALDERA ability
-└── govc                        # govc binary (VMware CLI)
+│   └── prev_cycle_ops.json          # Persisted operation IDs for next-cycle cleanup
+└── detection_ability_map.json       # Source mapping: ESCU detection ↔ CALDERA ability
 ```

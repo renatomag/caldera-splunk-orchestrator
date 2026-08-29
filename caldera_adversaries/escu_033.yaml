@@ -1,0 +1,9 @@
+id: 28bf9f5b-307b-4c76-aa08-548438e1e412
+name: SPLUNK ES / Disable Defender AntiVirus Registry / Tamper with Windows Defender
+  Registry - Powershell
+description: T1562.001 | defense-evasion | ESCU - Disable Defender AntiVirus Registry
+  - Rule
+atomic_ordering:
+- bfbaa9c720efc114513ddd5aab57a872
+tags: []
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc
