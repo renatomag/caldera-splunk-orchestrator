@@ -141,23 +141,9 @@ active_adversaries:
 
 ### `config/adversaries/escu_NNN.yaml` — um arquivo por adversário
 
-Cada arquivo define um par (detecção ESCU, habilidade CALDERA). São 47 arquivos no total.
+O repositório já inclui os 47 arquivos preenchidos. Cada um vincula uma detecção ESCU a uma habilidade CALDERA específica, identificada pelo `caldera_adversary_id` (UUID do adversário no CALDERA) e pelo `caldera_ability_id` (UUID da habilidade). O orquestrador usa esses IDs para iniciar as operações corretas.
 
-```yaml
-name: escu_045
-display_name: "SPLUNK ES / Domain Controller Discovery with Nltest / Discover domain controller"
-description: "T1018 | discovery | Domain Controller Discovery with Nltest"
-caldera_adversary_id: "<uuid-do-adversario>"   # deve existir no CALDERA
-targets:
-  - role: workstation
-techniques:
-  - id: T1018
-    name: "Discover domain controller (nltest)"
-    caldera_ability_id: "<uuid-da-habilidade>"
-    target_role: workstation
-```
-
-O campo `caldera_adversary_id` é obrigatório e deve corresponder a um adversário já existente no CALDERA — o orquestrador não cria adversários automaticamente.
+Esses arquivos não precisam ser editados a não ser que você esteja adicionando um novo adversário.
 
 ### `detection_ability_map.json` — fonte da verdade
 

@@ -141,23 +141,9 @@ active_adversaries:
 
 ### `config/adversaries/escu_NNN.yaml` — one file per adversary
 
-Each file defines one (ESCU detection, CALDERA ability) pair. There are 47 of these.
+The repo already includes all 47 files, fully populated. Each one links an ESCU detection to a specific CALDERA ability, identified by `caldera_adversary_id` (the adversary UUID in CALDERA) and `caldera_ability_id` (the ability UUID). The orchestrator uses these IDs to start the correct operations.
 
-```yaml
-name: escu_045
-display_name: "SPLUNK ES / Domain Controller Discovery with Nltest / Discover domain controller"
-description: "T1018 | discovery | Domain Controller Discovery with Nltest"
-caldera_adversary_id: "<adversary-uuid>"   # must exist in CALDERA
-targets:
-  - role: workstation
-techniques:
-  - id: T1018
-    name: "Discover domain controller (nltest)"
-    caldera_ability_id: "<ability-uuid>"
-    target_role: workstation
-```
-
-`caldera_adversary_id` is required. It must already exist in CALDERA — the orchestrator does not create adversaries.
+These files do not need to be edited unless you are adding a new adversary.
 
 ### `detection_ability_map.json` — source of truth
 
